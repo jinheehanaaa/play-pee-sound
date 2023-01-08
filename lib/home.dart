@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -36,7 +37,7 @@ class _HomePageState extends State<HomePage> {
               const SizedBox(
                 height: 10,
               ),
-              const Text("Save yourself from \nawkward situations",
+              const Text("Click Play button to play pee sound",
                   style: TextStyle(color: Colors.black)),
               Padding(
                 padding: const EdgeInsets.only(top: 30),
@@ -48,7 +49,10 @@ class _HomePageState extends State<HomePage> {
                 height: size.height / 10,
               ),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  final player = AudioPlayer();
+                  player.play(AssetSource('pee.mp3'));
+                },
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30.0),
